@@ -45,3 +45,80 @@ document.getElementById('bike').innerHTML =
     La bicicletta più leggera è: ${biciPiccola.nome},
     con un peso di: ${biciPiccola.peso} kg    
 `;
+
+
+
+
+
+
+//TODO Snack 2 Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti. Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0. Generare numeri random al posto degli 0 nelle proprietà: Punti fatti e falli subiti. (utilizzate le arrow function). Infine usando la destrutturazione creiamo un nuovo array i cui elementi sono sempre degli oggetti che contengono solo nomi e falli subiti e stampiamo tutto in console.
+
+
+
+const squadre = 
+[
+    {
+        squadra : 'Inter',
+        puntiFatti : 0,
+        falliSubiti : 0
+    },
+    {
+        squadra : 'Juventus',
+        puntiFatti : 0,
+        falliSubiti : 0
+    },
+    {
+        squadra : 'Milan',
+        puntiFatti : 0,
+        falliSubiti : 0
+    },
+    {
+        squadra : 'Atalanta',
+        puntiFatti : 0,
+        falliSubiti : 0
+    },
+    {
+        squadra : 'Napoli',
+        puntiFatti : 0,
+        falliSubiti : 0
+    },
+]
+
+//* funzione numeri random semplice
+// function numRandom (min, max)
+// {
+//     return Math.floor(Math.random() * (max - min - 1) + min);
+// }
+
+//* funzione numeri random con arrow function. Qui si ha il return implicito. 
+const numRandom = (min, max) => Math.floor(Math.random() * (max - min - 1) + min);
+
+
+
+//* Con il ciclo while andiamo a generare numeri random per i punti fatti e falli subiti all'interno di ogni oggetto dell'array
+let i = 0;
+
+while (i < squadre.length)
+{
+    squadre[i].puntiFatti = numRandom(1,100);
+    squadre[i].falliSubiti = numRandom(1,100);
+    i++;
+}
+console.log(squadre);
+
+
+//* Creiamo un nuovo array con la destrutturazione e pushiamo solo i nomi e i falli subiti degli oggetti. 
+
+const nuoveSquadre = [];
+
+//* Qui li pushiamo al solito con il ciclo for
+// for (let i = 0; i < squadre.length; i++)
+// {
+//     nuoveSquadre.push(squadre[i].squadra, squadre[i].falliSubiti)
+// }
+
+// console.log(nuoveSquadre);
+
+
+
+//* con il destructuring
