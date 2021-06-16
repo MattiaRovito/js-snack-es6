@@ -82,7 +82,7 @@ const squadre =
         puntiFatti : 0,
         falliSubiti : 0
     },
-]
+];
 
 //* funzione numeri random semplice
 // function numRandom (min, max)
@@ -114,11 +114,24 @@ const nuoveSquadre = [];
 //* Qui li pushiamo al solito con il ciclo for
 // for (let i = 0; i < squadre.length; i++)
 // {
-//     nuoveSquadre.push(squadre[i].squadra, squadre[i].falliSubiti)
+//     nuoveSquadre.push(squadre[i].squadra, squadre[i].falliSubiti);
 // }
 
 // console.log(nuoveSquadre);
 
 
 
-//* con il destructuring
+//* Con il destructuring, andiamo a pushare nel nuovo array tutti gli oggetti con il nome delle squadre e i falli subiti
+
+for (let i = 0; i < squadre.length; i++)
+{
+    const {squadra, falliSubiti} = squadre[i];
+    
+    //* si crea un nuovo oggetto che verrà poi pushato all'interno del nuovo array
+    const newObject = {
+        nuovaSquadra : squadra,
+        nuoviFalliSubiti : falliSubiti
+    };
+    nuoveSquadre.push(newObject);
+}
+console.log(nuoveSquadre);
