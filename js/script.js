@@ -28,20 +28,20 @@ let biciPiccola = biciclette[0];
 for (let i = 1; i < biciclette.length; i++)
 {
     if (biciclette[i].peso < biciPiccola.peso){
-        biciPiccola.peso = biciclette[i];
+        biciPiccola = biciclette[i];
     }
 }
 
 
 //* Stampiamo la bici con il peso inferiore tramite il destructuring
 
-const {peso} = biciPiccola;
-console.log(peso);
+const {nome, peso} = biciPiccola;
+console.log(nome, peso);
 
 
 //* Template literal
 document.getElementById('bike').innerHTML = 
 `
-    La bicicletta più leggera è: ${biciPiccola.nome}
+    La bicicletta più leggera è: ${biciPiccola.nome},
     con un peso di: ${biciPiccola.peso} kg    
 `;
