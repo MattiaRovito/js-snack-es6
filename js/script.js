@@ -36,14 +36,15 @@ for (let i = 1; i < biciclette.length; i++)
 //* Stampiamo la bici con il peso inferiore tramite il destructuring
 
 const {nome, peso} = biciPiccola;
+console.log(biciPiccola);
 console.log(nome, peso);
 
 
 //* Template literal
 document.getElementById('bike').innerHTML = 
 `
-    La bicicletta più leggera è: ${biciPiccola.nome},
-    con un peso di: ${biciPiccola.peso} kg    
+    La bicicletta più leggera è: ${nome},
+    con un peso di: ${peso} kg    
 `;
 
 
