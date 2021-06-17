@@ -88,11 +88,11 @@ const squadre =
 //* funzione numeri random semplice
 // function numRandom (min, max)
 // {
-//     return Math.floor(Math.random() * (max - min - 1) + min);
+//     return Math.floor(Math.random() * (max - min + 1) + min);
 // }
 
 //* funzione numeri random con arrow function. Qui si ha il return implicito. 
-const numRandom = (min, max) => Math.floor(Math.random() * (max - min - 1) + min);
+const numRandom = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 
 
